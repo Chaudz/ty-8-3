@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUAN DZ 8-3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="heart.png" type="image/png" sizes="16x16" />
+    <style>
+      html {
+        overflow: hidden;
+      }
+      .pacifico-regular {
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      body {
+        background-color: #e7b3b3;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0; /* Remove default margin */
+      }
+      @keyframes scaleUpDown {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .img-gif {
+        animation: scaleUpDown 2s ease-in-out infinite;
+        transition: 1s ease-in-out;
+        position: relative;
+        z-index: 100;
+      }
+      .img-gif.active {
+        opacity: 0;
+      }
+      .thu-chuc {
+        width: 250px;
+        background-color: white;
+        box-shadow: 1px 2px 20px 6px #ff000059;
+        border-radius: 20px;
+        transform: translate(-50%, -50%);
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        padding: 20px;
+      }
+      .thu-chuc.active {
+        opacity: 1;
+        z-index: 100;
+      }
+      .audio {
+        position: fixed;
+        top: -200px;
+        opacity: 0;
+      }
+      @keyframes downToTop {
+        0% {
+          top: 100%;
+        }
+
+        100% {
+          top: -50px;
+        }
+      }
+      @keyframes downToTop2 {
+        0% {
+          top: 100%;
+        }
+
+        100% {
+          top: -150px;
+        }
+      }
+      @keyframes downToTop3 {
+        0% {
+          top: 250%;
+        }
+
+        100% {
+          top: -400px;
+        }
+      }
+      @keyframes downToTop4 {
+        0% {
+          top: 120%;
+        }
+
+        100% {
+          top: -150px;
+        }
+      }
+      span {
+        background-image: url("heart.png");
+        width: 50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        background-size: cover;
+        z-index: 900; /* higher than the img-gif */
+        display: none;
+      }
+      span.heart-5 {
+        background-image: url("balloons.png") !important;
+      }
+      span.heart-1 {
+        animation: downToTop 2s ease infinite;
+      }
+      span.heart-2 {
+        animation: downToTop2 2s ease infinite;
+      }
+      span.heart-3 {
+        animation: downToTop3 2s ease infinite;
+      }
+      span.heart-4 {
+        animation: downToTop4 2s ease infinite;
+      }
+      span.heart-5 {
+        animation: downToTop4 2s ease infinite;
+      }
+      span.active {
+        display: block;
+      }
+      .wrapper-title {
+        align-items: center;
+        gap: 5px;
+      }
+      @keyframes firstHeart {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .first-heart {
+        animation: firstHeart 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: relative">
+      <audio controls class="audio">
+        <source src="chuchu.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <img
+        class="img-gif"
+        src="gift-box-310224_960_720.webp"
+        alt=""
+        style="width: 200px; cursor: pointer"
+      />
+      <div class="thu-chuc" style="position: absolute; top: 50%; left: 50%">
+        <div class="d-flex gap-2 wrapper-title">
+          <p class="pacifico-regular" style="text-align: center">
+            Lời nhắn 8-3!!
+          </p>
+          <img
+            src="heart.png"
+            class="first-heart"
+            alt=""
+            style="width: 15px; height: 15px"
+          />
+        </div>
+        <p style="font-size: 8px" class="pacifico-regular">
+          Gửi chị đại Mỹ Hằng 8-3 Chúc Hằng luôn tràn đầy niềm vui và hạnh phúc,
+          luôn giữ vững đôi bước trước những thách thức, và tiếp tục tỏa sáng
+          như ánh đèn cho mọi người xung quanh. Ngày Quốc tế Phụ nữ là dịp để
+          tôn vinh và tri ân những đóng góp to lớn của phụ nữ trong xã hội, và
+          bạn là một phần quan trọng của điều đó. Kèm theo đó đổ nhẹ cái nguyện
+          vọng 1 🍀💪💪
+        </p>
+
+        <div style="display: flex; align-items: end; flex-direction: row">
+          <p class="pacifico-regular" style="font-size: 10px; margin-top: 12px">
+            Luân dz :3
+          </p>
+          <img src="heart.png" alt="" style="width: 15px; margin-left: 4px" />
+        </div>
+      </div>
+    </div>
+    <div style="height: 100vh; width: 100vw; position: absolute; z-index: 10">
+      <span class="heart heart-1" style="left: 0"></span>
+      <span class="heart heart-2" style="left: 10%"></span>
+      <span class="heart heart-3" style="right: 0"></span>
+      <span class="heart heart-4" style="right: 20%"></span>
+      <span class="heart heart-5" style="right: 40%"></span>
+    </div>
+  </body>
+  <script>
+    const img = document.querySelector(".img-gif");
+    const thu = document.querySelector(".thu-chuc");
+    const audio = document.querySelector(".audio");
+    const spans = document.querySelectorAll(".heart");
+
+    img.addEventListener("click", () => {
+      img.classList.add("active");
+      thu.classList.add("active");
+      audio.play();
+      spans.forEach((span) => {
+        span.classList.add("active");
+      });
+    });
+    audio.addEventListener("ended", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  </script>
+</html>
